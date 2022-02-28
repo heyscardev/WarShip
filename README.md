@@ -1,4 +1,4 @@
-# Naval_destruction
+# WarShip
 es uno de mis primeros proyectos en c++
 inspirado en el juego  naval batle ship 
 a llevado a un nivel conceptual 
