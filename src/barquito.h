@@ -1,30 +1,37 @@
-/*
- * barquito.h
- *
- *  Created on: 06/01/2020
- *      Author: SamSoft
- */
+//	======================
+//	|     Barquito.h     |
+//	======================
 
-#ifndef BARQUITO_H_
-#define BARQUITO_H_
+using namespace std;
 
-class barquito {
-public:
-	barquito();
-	void iniciarjuego(); //inicializa la matriz en cero y llama a otros procedimientos
-	void pedir_coordenadas();//pide coordenadas con posicion h o v
-	void pedir_coordenadas2();//pide coordenadas sin posicion
-	void pedirdatos(); //pide datos del usuario y los acomoda en la matriz
-	void mostrar_tablero(); // muestra el espacio de juego que se actualiza
-	void mostrar_tablero2(); // muestra el espacio de juego que se actualiza y muestra posicion de barcos
-	void resultado(); //arregla la matriz funcion  de fallar o acertar
-	void ganar(); //resultado final
-
-private:
-	int matriz[8][8];int matriz2[8][8];
-	int h,v,auxiliar,protocolo,acumulador;
-	int resulto;
-	char posicion;
+class Barquito {
+	public:
+		Barquito();					//CONSTRUCTOR
+		void iniciarjuego(); 		//INICIALIZA LA MATRIZ EN CERO Y LLAMA A OTROS PROCEDIMIENTOS
+		void pedir_coordenadas();	//PIDE COORDENADAS CON POSICION H O V [COLOCAR BARCOS]
+		void pedir_coordenadas2();	//PIDE COORDENADAS SIN POSICION [DISPARAR A LOS BARCOS]
+		void pedirdatos(); 			//PIDE DATOS DEL USUARIO Y LOS ACOMODA EN LA MATRIZ
+		void mostrar_tablero(); 	//MUESTRA EL ESPACIO DE JUEGO QUE SE ACTUALIZA
+		void mostrar_tablero2(); 	//MUESTRA EL ESPACIO DE JUEGO QUE SE ACTUALIZA Y MUESTRA POSICION DE BARCOS
+		void resultado();			//ARREGLA LA MATRIZ Y LA FUNCION DE FALLAR O ACERTAR
+		void ganar(); 				//RESULTADO FINAL
+		int menu();					//MUESTRA EL MENU, EL LOGO Y LEE DATOS
+		void logo();				//MUESTRA SOLO EL LOGO
+		void estadisticas();		//MUESTRA EL TOTAL DE LAS ESTADISTICAS DE TODOS LOS JUEGOS JUGADOS
+		void fin();					//MUESTRA EL GRACIAS POR JUGAR
+	private:
+		int matriz[8][8]; 	//MATRIZ PARA GUARDAR LAS POSICIONES DE LOS BARCOS
+		int matriz2[8][8];	//MATRIZ2 SE MODIFICA PARA SER MOSTRADA EN EL JUEGO
+		int h,v;			//SON LAS COORDENADAS QUE SE USAN PARA MOVERSE EN LA MATRIZ
+		int auxiliar; 		//TOTAL DE TODO EL ACUMULADO DE DISPAROS ACERTADOS
+		int coxiliar;		//TOTAL DE TODO EL ACUMULADO DE DISPAROS FALLADOS
+		int protocolo;		//CANTIDAD DE JUEGOS JUGADOS
+		int fallador; 		//ACUMULADOR DE DISPAROS FALLADOS
+		int acumulador;		//ACUMULADOR DE DISPAROS ACERTADOS
+		int resulto;		//MUESTRA EL RESULTADO TOTAL DE LOS BARCOS DESTRUIDO
+		char posicion;		//LEE EL SENTIDO DE POSICION DEL BARCO A COLOCAR
+		char copr; 			//COLOCA SIMBOLO DE COPYRIGHT
+		char glu; 			//COLOCA SIMBOLO DE GOTAS
+		char brr; 			//COLOCA EL SIMBOLO DE IGUALDAD INVERTIDO
+		bool validador; 	// VALIDA SI EL CICLO NO CUMPLE CON EL REQUISITO
 };
-
-#endif /* BARQUITO_H_ */
